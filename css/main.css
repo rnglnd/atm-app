@@ -1,0 +1,132 @@
+@media (min-width: 1200px) {
+  html {
+    font-size: 32px;
+  }
+}
+
+@media (min-width: 992px) {
+  html {
+    font-size: 24px;
+  }
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+}
+
+h1 {
+  color: #12AB3B;
+}
+
+h2 {
+  color: #12AB3B;
+}
+
+p {
+  color: #12AB3B;
+}
+
+.container {
+  background-color: #094F1B;
+  border: 3rem solid #333;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.container--selection {
+  justify-content: space-between;
+  flex-direction: column;
+}
+
+.container--balance-withdraw {
+  flex-direction: column;
+}
+
+.input {
+  font-size: 1rem;
+}
+
+.button {
+  font-size: 1rem;
+  font-weight: 400;
+  min-width: 6rem;
+  padding: .375rem .75rem;
+  text-align: center;
+}
+
+.form {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.button:hover {
+  opacity: 0.7
+}
+
+.button--normal {
+  background-color: #666;
+  color: #111;
+  margin: 1rem;
+}
+
+.button--atm {
+  background-color: #666;
+  margin: 1rem;
+  width: 5rem;
+  padding: 0;
+  height: 5rem;
+  cursor: pointer;
+}
+
+.balance__viewer {
+  color: #111;
+  font-weight: 600;
+  margin-left: 0.5rem;
+}
+
+.balance__viewer--negative {
+  color: red;
+}
+
+.balance-row {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.link__atm {
+  color: #12AB3B;
+  text-decoration: none;
+  font-size: 2rem;
+}
+
+.link__atm:hover {
+  opacity: 0.7
+}
+
+.link__atm--home {
+  position: fixed;
+  top: 3.125rem;
+  left: 3.125rem;
+}
+
+.selection-row {
+  width: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.selection-row:nth-child(even) {
+  justify-content: flex-end;
+}
+
+.selection-row:nth-child(odd) {
+  justify-content: flex-start;
+}
