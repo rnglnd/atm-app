@@ -10,8 +10,10 @@ const Auth = ({ login }) => {
   return (
     <main className="container">
       <form className="form" onSubmit={() => login(pin)}>
-        <h1>Please enter PIN below to login</h1>
-        <input type="number" className="input" value={pin} onChange={(e) => setPin(e.target.value)} />
+        <label htmlFor="login">
+          <h1>Please enter PIN below to login</h1>
+        </label>
+        <input id="login" type="number" className="input" value={pin} onChange={(e) => setPin(e.target.value)} />
         <br />
         <button type="submit" className="button button--normal">
           Enter

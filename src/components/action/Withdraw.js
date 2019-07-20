@@ -12,8 +12,10 @@ const Withdraw = ({ getNotes }) => {
     <main className="container">
       <Link to="/" className="link__atm link__atm--home">Home</Link>
       <form className="form" onSubmit={() => getNotes(amount)}>
-        <h1>Please enter in the desired amount.</h1>
-        <input type="number" className="input" value={amount} onChange={(e) => setAmount(e.target.value)} />
+        <label htmlFor="withdraw">
+          <h1>Please enter in the desired amount.</h1>
+        </label>
+        <input id="withdraw" type="number" className="input" value={amount} onChange={(e) => setAmount(e.target.value)} />
         <br />
         <button type="submit" className="button button--normal">
           Enter

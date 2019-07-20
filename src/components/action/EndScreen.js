@@ -9,7 +9,7 @@ const EndScreen = ({ lastTransaction }) => {
     return (
       <main className="container">
         <Link to="/" className="link__atm link__atm--home">Home</Link>
-        <h2>{lastTransaction}</h2>
+        <h1>{lastTransaction}</h1>
       </main>
     );
   }
@@ -17,7 +17,7 @@ const EndScreen = ({ lastTransaction }) => {
   return (
     <main className="container">
       <Link to="/" className="link__atm link__atm--home">Home</Link>
-      <h2>The notes used were: </h2>
+      <h1>The notes used were: </h1>
       <ul>
         {Object.entries(lastTransaction).map(([key, value]) => (
           <li key={key}>

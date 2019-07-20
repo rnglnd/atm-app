@@ -9,7 +9,7 @@ const Balance = ({ currentBalance }) => {
   return (
     <main className="container">
       <Link to="/" className="link__atm link__atm--home">Home</Link>
-      <h2>Your current balance is:</h2>
+      <h1>Your current balance is:</h1>
       <BalanceViewer currentBalance={currentBalance} />
     </main>
   );

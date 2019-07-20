@@ -14,8 +14,9 @@ const BalanceWithdraw = ({ currentBalance, getNotes }) => {
       <Link to="/" className="link__atm link__atm--home">Home</Link>
       <h1>Please enter the amount you would like below:</h1>
       <form className="form" onSubmit={() => getNotes(amount)}>
+        <label htmlFor="amount" />
         <h1>Please enter in the desired amount.</h1>
-        <input type="number" className="input" value={amount} onChange={(e) => setAmount(e.target.value)} />
+        <input id="amount" type="number" className="input" value={amount} onChange={(e) => setAmount(e.target.value)} />
         <br />
         <button type="submit" className="button button--normal">
           Enter

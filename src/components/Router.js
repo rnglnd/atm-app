@@ -1,24 +1,74 @@
-import React from "react";
-import { HashRouter, Route, Switch } from "react-router-dom";
+import React, { lazy, Suspense } from 'react';
+import { HashRouter, Route, Switch } from 'react-router-dom';
 import { Provider } from 'react-redux';
 import store from '../store';
-import Selection from "./selection/Selection";
-import Balance from './action/Balance';
-import BalanceWithdraw from './action/BalanceWithdraw';
-import Withdraw from './action/Withdraw';
-import Login from '../components/auth/Login';
-import EndScreen from '../components/action/EndScreen';
+import Loading from './shared/Loading';
+
+const Selection = lazy(() => import('./selection/Selection'));
+const Balance = lazy(() => import('./action/Balance'));
+const BalanceWithdraw = lazy(() => import('./action/BalanceWithdraw'));
+const Withdraw = lazy(() => import('./action/Withdraw'));
+const Login = lazy(() => import('./auth/Login'));
+const EndScreen = lazy(() => import('./action/EndScreen'));
 
 const Router = () => (
   <Provider store={store}>
     <HashRouter>
       <Switch>
-        <Route path="/" exact component={Selection} />
-        <Route path="/login" exact component={Login} />
-        <Route path="/balance" exact component={Balance} />
-        <Route path="/balance-withdraw" exact component={BalanceWithdraw} />
-        <Route path="/withdraw" exact component={Withdraw} />
-        <Route path="/end-screen" exact component={EndScreen} />
+        <Route
+          path="/"
+          exact
+          render={(props) => (
+            <Suspense fallback={<Loading />}>
+              <Selection {...props} />
+            </Suspense>
+          )}
+        />
+        <Route
+          path="/login"
+          exact
+          render={(props) => (
+            <Suspense fallback={<Loading />}>
+              <Login {...props} />
+            </Suspense>
+          )}
+        />
+        <Route
+          path="/balance"
+          exact
+          render={(props) => (
+            <Suspense fallback={<Loading />}>
+              <Balance {...props} />
+            </Suspense>
+          )}
+        />
+        <Route
+          path="/balance-withdraw"
+          exact
+          render={(props) => (
+            <Suspense fallback={<Loading />}>
+              <BalanceWithdraw {...props} />
+            </Suspense>
+          )}
+        />
+        <Route
+          path="/withdraw"
+          exact
+          render={(props) => (
+            <Suspense fallback={<Loading />}>
+              <Withdraw {...props} />
+            </Suspense>
+          )}
+        />
+        <Route
+          path="/end-screen"
+          exact
+          render={(props) => (
+            <Suspense fallback={<Loading />}>
+              <EndScreen {...props} />
+            </Suspense>
+          )}
+        />
         <Route
           path="*"
           render={({ location: { pathname } }) => (

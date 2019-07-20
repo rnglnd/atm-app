@@ -3,15 +3,15 @@ import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import compose from 'ramda/src/compose';
 import withAuthCheck from '../shared/withAuthCheck';
+import Loading from '../shared/Loading';
 
 const Selection = ({ history, isLoading }) => {
   if (isLoading) {
     return (
-      <main className="container">
-        <h1>Waiting...</h1>
-      </main>
+      <Loading />
     )
   }
+  
   return (
     <main className="container container--selection">
       <h1>Please make a selection</h1>
